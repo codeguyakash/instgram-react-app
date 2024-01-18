@@ -1,12 +1,9 @@
-import { useEffect } from "react";
-import Header from "./components/Header";
-import axios from "axios";
-
+import HomePage from "./Pages/HomePage";
 function App() {
-  const ACCESS_TOKEN = import.meta.env.VITE_ACCESS_TOKEN;
+  // const ACCESS_TOKEN = import.meta.env.VITE_ACCESS_TOKEN;
   return (
     <>
-      <Header />
+      <HomePage />
     </>
   );
 }

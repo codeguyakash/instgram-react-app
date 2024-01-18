@@ -1,9 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import userprofilepic from "../utils/userprofilepic.jpg";
 
 const Header = () => {
   const [users, setUsers] = useState([]);
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(1);
   useEffect(() => {
     axios
       .get(`https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=10`)
@@ -35,39 +36,38 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  console.log(users);
+  // console.log(users);
 
   return (
     <>
-      <div className="w-auto h-96 bg-[#19646e] pt-20 pl-48">
-        <h2 className="text-7xl font-semibold text-[#e6f5f0]">
-          Facebook Community
-          <br />
-          Standards
-        </h2>
-        <h3 className="text-[20px] text-[#e6f5f0]">
-          The Facebook Community Standards outline what is and isn't allowed on{" "}
-          <br />
-          Facebook.
-        </h3>
-      </div>
-      <div className="w-auto h-auto flex pl-48 pt-10 flex-wrap gap-6">
-        {users.map((user, index) => {
-          return (
-            <div
-              key={index}
-              className="w-96 min-h-56 border-2 border-gray-100 rounded-md shadow-md p-3"
-            >
-              <div className="flex justify-between items-center">
-                <h2 className="text-1xl border-2 w-max px-3 py-1 rounded-md">
-                  {user.id}
-                </h2>
-              </div>
-              <h2 className="text-1xl font-bold">Title: {user.title}</h2>
-              <p className="text-justify ">{user.body}</p>
-            </div>
-          );
-        })}
+      <div className="ml-[13%] w-[68%] border-2 flex justify-center items-center py-4">
+        <div className="status flex justify-center gap-4">
+          <div className="user-status w-20 h-20 rounded-full border-[3px] border-blue-500">
+            <img src={userprofilepic} alt="user-pic" className="rounded-full" />
+          </div>
+          <div className="user-status w-20 h-20 rounded-full border-[3px] border-yellow-500">
+            <img src={userprofilepic} alt="user-pic" className="rounded-full" />
+          </div>
+          <div className="user-status w-20 h-20 rounded-full border-[3px] border-green-500">
+            <img src={userprofilepic} alt="user-pic" className="rounded-full" />
+          </div>
+          <div className="user-status w-20 h-20 rounded-full border-[3px] border-pink-500">
+            <img src={userprofilepic} alt="user-pic" className="rounded-full" />
+          </div>
+          <div className="user-status w-20 h-20 rounded-full border-[3px] border-violet-500">
+            <img src={userprofilepic} alt="user-pic" className="rounded-full" />
+          </div>
+          <div className="user-status w-20 h-20 rounded-full border-[3px] border-orange-500">
+            <img src={userprofilepic} alt="user-pic" className="rounded-full" />
+          </div>
+          <div className="user-status w-20 h-20 rounded-full border-[3px] border-purple-500">
+            <img src={userprofilepic} alt="user-pic" className="rounded-full" />
+          </div>
+
+          <div className="user-status w-20 h-20 rounded-full border-[3px] border-red-500">
+            <img src={userprofilepic} alt="user-pic" className="rounded-full" />
+          </div>
+        </div>
       </div>
     </>
   );
