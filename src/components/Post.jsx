@@ -1,6 +1,6 @@
 import React from "react";
 import { FaRegHeart } from "react-icons/fa";
-import post from "../utils/post.png";
+import post from "../utils/post-instagram.jpg";
 import userprofilepic from "../utils/userprofilepic.jpg";
 import { IoChatbubbleOutline } from "react-icons/io5";
 import { PiPaperPlaneTilt } from "react-icons/pi";
